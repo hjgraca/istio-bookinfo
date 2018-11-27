@@ -31,18 +31,18 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: ratings-v1
+  name: ratings-v#{ContainerVersion}#
 spec:
   replicas: 1
   template:
     metadata:
       labels:
         app: ratings
-        version: v1
+        version: v#{ContainerVersion}#
     spec:
       containers:
       - name: ratings
-        image: istio/examples-bookinfo-ratings-v1:1.8.0
+        image: hjgraca.azurecr.io/ratings:#{ContainerVersion}#
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
