@@ -29,3 +29,6 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
+        env:
+        - name: Environment
+          value: "#{Environment}#"

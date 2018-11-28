@@ -49,6 +49,7 @@ from flask_bootstrap import Bootstrap
 Bootstrap(app)
 
 servicesDomain = "" if (os.environ.get("SERVICES_DOMAIN") == None) else "." + os.environ.get("SERVICES_DOMAIN")
+environment = os.environ.get("Environment")
 
 details = {
     "name" : "http://details{0}:9080".format(servicesDomain),
@@ -152,7 +153,8 @@ def front():
         product=product,
         details=details,
         reviews=reviews,
-        user=user)
+        user=user,
+        environment=environment)
 
 
 # The API:
