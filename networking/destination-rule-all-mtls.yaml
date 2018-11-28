@@ -3,21 +3,21 @@ kind: DestinationRule
 metadata:
   name: productpage
 spec:
-  host: productpage.staging.svc.cluster.local
+  host: productpage
   trafficPolicy:
     tls:
       mode: ISTIO_MUTUAL
   subsets:
   - name: v1
     labels:
-      version: v1.0.3
+      version: v1.0.5
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: reviews
 spec:
-  host: reviews.staging.svc.cluster.local
+  host: reviews
   trafficPolicy:
     tls:
       mode: ISTIO_MUTUAL
@@ -37,7 +37,7 @@ kind: DestinationRule
 metadata:
   name: ratings
 spec:
-  host: ratings.staging.svc.cluster.local
+  host: ratings
   trafficPolicy:
     tls:
       mode: ISTIO_MUTUAL
@@ -60,7 +60,7 @@ kind: DestinationRule
 metadata:
   name: details
 spec:
-  host: details.staging.svc.cluster.local
+  host: details
   trafficPolicy:
     tls:
       mode: ISTIO_MUTUAL
