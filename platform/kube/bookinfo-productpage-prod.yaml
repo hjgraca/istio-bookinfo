@@ -32,3 +32,5 @@ spec:
         env:
         - name: Environment
           value: "#{Environment}#"
+        - name: Version
+          value: "#{ContainerVersion}#"

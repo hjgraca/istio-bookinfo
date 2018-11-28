@@ -50,6 +50,7 @@ Bootstrap(app)
 
 servicesDomain = "" if (os.environ.get("SERVICES_DOMAIN") == None) else "." + os.environ.get("SERVICES_DOMAIN")
 environment = os.environ.get("Environment")
+version = os.environ.get("Version")
 
 details = {
     "name" : "http://details{0}:9080".format(servicesDomain),
@@ -154,7 +155,8 @@ def front():
         details=details,
         reviews=reviews,
         user=user,
-        environment=environment)
+        environment=environment,
+        version=version)
 
 
 # The API:
